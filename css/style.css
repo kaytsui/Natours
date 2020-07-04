@@ -51,6 +51,7 @@ body {
     top: 40%;   /* In relation to the parent element */
     left: 50%;  /* In relation to the parent element */
     transform: translate(-50%, -50%);   /* In relation to the element itself */
+    text-align: center; /* Only affects inline elements */
 }
 
 .heading-primary {
@@ -81,15 +82,15 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    margin-bottom: 25px;
 
     animation: moveInRight 1s ease-out;
-
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-100px);  /* left */
     }
 
     80% {
@@ -105,7 +106,7 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(100px);   /* right */
     }
 
     80% {
@@ -116,4 +117,30 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: auto;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);    /* up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active { 
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.btn-white {
+    background-color: #FFF;
+    color: #777;
 }
