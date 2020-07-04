@@ -119,6 +119,18 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:  translateY(0);
+    }
+}
+
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -128,6 +140,7 @@ body {
     display: inline-block;
     margin: auto;
     transition: all .2s;
+    position: relative;
 }
 
 .btn:hover {
@@ -143,4 +156,31 @@ body {
 .btn-white {
     background-color: #FFF;
     color: #777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;  /* Because button is also inline-block */
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #FFF;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scale(1.6);
+    opacity: 0;     /* Fades out */
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;  /* name duration timing-function delay */
+    animation-fill-mode: backwards; /* Automatically applies 0% animation before it starts */
 }
