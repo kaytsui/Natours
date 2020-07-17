@@ -36,6 +36,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after {   /* Creates secondary button for scaling */
         content: "";
         display: inline-block;  /* Because button is also inline-block */
