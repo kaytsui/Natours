@@ -75,7 +75,7 @@
         left: 0rem;
 
 
-        &::after {
+        &::after {              // inner circle checkmark element
             content: "";        // content must be defined for ::after elements
             display: block;
             height: 1.3rem;
