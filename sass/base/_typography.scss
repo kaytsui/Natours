@@ -4,7 +4,6 @@ body {
     font-size: $default-font-size;
     line-height: 1.7;
     color: $color-gray-dark;
-    padding: 3rem;  /* Creates white border around page */
 }
 
 .heading-primary {
@@ -22,6 +21,11 @@ body {
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-out;
+
+        @include respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
     
         /*
         animatoin-delay: 3s;
@@ -37,6 +41,10 @@ body {
         margin-bottom: 2.5rem;
     
         animation: moveInRight 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -50,8 +58,15 @@ body {
     color: transparent;
     letter-spacing: .2rem;
 
-
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);
