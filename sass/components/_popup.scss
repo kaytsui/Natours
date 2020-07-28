@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, .3);
+    background-color: rgba($color-black, .8);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 9999;          // puts it in front of the nav button
@@ -12,7 +12,11 @@
     visibility: hidden;     // need visibility hidden with opacity 0 because the content is still on the screen until we hide it
     transition: all .3s;
 
-
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, .3);
+    }
 
     &__content {
         @include center-horizontal-vertical;
